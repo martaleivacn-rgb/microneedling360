@@ -8,10 +8,10 @@
 <meta property="og:title" content="Microneedling 360 · Muy pronto">
 <meta property="og:description" content="Facial. Capilar. Acné. Manchas. La técnica completa, con criterio. Lista de espera abierta.">
 <meta property="og:image" content="marta-retrato.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:wght@400;500&family=Jost:wght@300;400;500&display=swap">
 <style>
+@font-face{font-family:"Instrument Serif";src:url(is-regular.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Instrument Serif";font-style:italic;src:url(is-italic.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Jost";src:url(jost.woff2) format("woff2");font-weight:100 900;font-display:swap}
 /* Same visual system as Marta's capilar landing: blush paper, tall serif, nude highlight bar, spaced caps. Single light theme: it is her brand. */
 :root{
   color-scheme:light;
@@ -83,6 +83,8 @@ section{padding-block:clamp(64px,10vw,120px);position:relative}
 .signup input[type=text],.signup input[type=email]{font:inherit;font-size:1rem;letter-spacing:0;text-transform:none;color:var(--ink);background:var(--blush);border:1px solid var(--line);border-radius:0;padding:.85em .9em;min-height:50px;width:100%}
 .signup input:focus{outline:2px solid var(--rose);outline-offset:0;border-color:transparent}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;line-height:1.5;color:var(--muted)}
+.rgpd{font-size:.72rem;line-height:1.5;color:var(--muted);margin:0 0 14px}
+.rgpd a,.consent a{color:inherit}
 .consent input{margin-top:.25em;accent-color:var(--rose);width:18px;height:18px;flex:none}
 .signup .btn{width:100%}
 .signup .note{font-size:.82rem;color:var(--muted);text-align:center}
@@ -203,7 +205,7 @@ footer .wrap{display:flex;flex-direction:column;gap:12px;align-items:center}
             <label class="f">Nombre<input type="text" name="fields[name]" autocomplete="given-name" required></label>
             <label class="f">Email<input type="email" name="fields[email]" autocomplete="email" required></label>
           </div>
-          <label class="consent" style="margin:14px 0"><input type="checkbox" name="consent" required><span>Quiero que Marta Leiva me escriba sobre Microneedling 360. Puedo darme de baja cuando quiera.</span></label>
+          <label class="consent" style="margin:14px 0"><input type="checkbox" name="consent" required><span>He leído la <a href="privacidad.html" target="_blank">política de privacidad</a> y quiero que Marta Leiva me escriba sobre Microneedling 360. Puedo darme de baja cuando quiera.</span></label><p class="rgpd">Responsable: Marta Leiva Cano. Finalidad: informarte de Microneedling 360. Legitimación: tu consentimiento. Destinatarios: MailerLite, que gestiona los emails; no cedemos tus datos. Derechos: acceso, rectificación, supresión y otros en martaleivacn@gmail.com. Más información en la <a href="privacidad.html" target="_blank">política de privacidad</a>.</p>
           <button class="btn btn--ink" type="submit">Quiero mi acceso prioritario</button>
         </div>
         <p class="msg" role="status" aria-live="polite"></p>
@@ -294,7 +296,7 @@ footer .wrap{display:flex;flex-direction:column;gap:12px;align-items:center}
           <label class="f">Nombre<input type="text" name="fields[name]" autocomplete="given-name" required></label>
           <label class="f">Email<input type="email" name="fields[email]" autocomplete="email" required></label>
         </div>
-        <label class="consent" style="margin:14px 0"><input type="checkbox" name="consent" required><span>Quiero que Marta Leiva me escriba sobre Microneedling 360. Puedo darme de baja cuando quiera.</span></label>
+        <label class="consent" style="margin:14px 0"><input type="checkbox" name="consent" required><span>He leído la <a href="privacidad.html" target="_blank">política de privacidad</a> y quiero que Marta Leiva me escriba sobre Microneedling 360. Puedo darme de baja cuando quiera.</span></label><p class="rgpd">Responsable: Marta Leiva Cano. Finalidad: informarte de Microneedling 360. Legitimación: tu consentimiento. Destinatarios: MailerLite, que gestiona los emails; no cedemos tus datos. Derechos: acceso, rectificación, supresión y otros en martaleivacn@gmail.com. Más información en la <a href="privacidad.html" target="_blank">política de privacidad</a>.</p>
         <button class="btn btn--ink" type="submit">Quiero mi acceso prioritario</button>
       </div>
       <p class="msg" role="status" aria-live="polite"></p>
@@ -307,6 +309,7 @@ footer .wrap{display:flex;flex-direction:column;gap:12px;align-items:center}
   <div class="wrap">
     <p class="sig">Marta Leiva · Formaciones</p>
     <p>Formación para profesionales de la estética. Tus datos solo se usan para informarte de esta formación.</p>
+    <p class="legal"><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="condiciones.html">Condiciones de compra</a> · © 2026 Marta Leiva Cano</p>
   </div>
 </footer>
 

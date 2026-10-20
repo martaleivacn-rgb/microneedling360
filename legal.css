@@ -1,0 +1,22 @@
+@font-face{font-family:"Instrument Serif";src:url(is-regular.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Instrument Serif";font-style:italic;src:url(is-italic.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Jost";src:url(jost.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{color-scheme:light;--blush:#f3e7dd;--rose:#8e5f50;--ink:#2a1c18;--muted:#6e584f;--line:#d5bdb0;--white:#fffaf7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--blush);color:var(--ink);font-family:"Jost","Avenir Next","Helvetica Neue",Arial,sans-serif;font-weight:300;font-size:1rem;line-height:1.7}
+.top{padding:22px 16px;border-bottom:1px solid var(--line)}
+.top a{font-family:"Instrument Serif",Georgia,serif;font-size:1.4rem;text-decoration:none;color:var(--ink)}
+main{max-width:760px;margin:0 auto;padding:40px 16px 64px}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.05;margin:0 0 8px}
+.upd{color:var(--muted);font-size:.9rem;margin:0 0 32px}
+h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:1.6rem;margin:36px 0 8px}
+h3{font-weight:500;font-size:1rem;margin:20px 0 4px}
+p,li{margin:0 0 12px}
+ul{padding-left:20px}
+a{color:var(--rose)}
+table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:.95rem}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:500;width:32%}
+.box{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:12px 0 20px}
+footer{border-top:1px solid var(--line);padding:24px 16px;text-align:center;font-size:.85rem;color:var(--muted)}
+footer a{color:var(--muted);margin:0 8px}
