@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certificado · Microneedling 360</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+@font-face{font-family:"Instrument Serif";src:url(is-regular.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Instrument Serif";font-style:italic;src:url(is-italic.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Jost";src:url(jost.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--blush:#f3e7dd;--blush-2:#e9d7ca;--rose:#8e5f50;--rose-2:#b97f6f;--ink:#2a1c18;--muted:#6e584f;--line:#d5bdb0;--white:#fffaf7;
+--display:"Instrument Serif",Georgia,serif;--body:"Jost","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--blush);color:var(--ink);font-family:var(--body)}
+.panel{max-width:640px;margin:0 auto;padding:32px 16px}
+.panel h1{font-family:var(--display);font-weight:400;font-size:34px;margin:0 0 8px}
+.panel p{color:var(--muted);line-height:1.6;margin:0 0 16px}
+label{display:block;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin:0 0 6px}
+input{width:100%;font:inherit;font-size:18px;padding:12px 14px;border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:2px}
+button{margin-top:16px;font:inherit;font-size:14px;letter-spacing:2px;text-transform:uppercase;background:var(--ink);color:var(--white);border:0;padding:14px 22px;cursor:pointer;border-radius:999px}
+button:hover{background:var(--rose)}
+.msg{font-size:14px;color:var(--rose)}
+.wrap{padding:0 16px 40px;display:none}
+.cert{width:100%;max-width:1060px;aspect-ratio:297/210;margin:0 auto;background:var(--white);position:relative;overflow:hidden;box-shadow:0 10px 40px rgba(42,28,24,.12)}
+.cert .frame{position:absolute;inset:3.2%;border:1px solid var(--line)}
+.cert .frame2{position:absolute;inset:4.2%;border:1px solid var(--blush-2)}
+.cert .in{position:absolute;inset:8% 10%;display:flex;flex-direction:column;align-items:center;text-align:center;container-type:inline-size}
+.brand{font-family:var(--display);font-size:3.2cqw;margin:0}
+.kick{font-size:1.15cqw;letter-spacing:.45cqw;text-transform:uppercase;color:var(--rose);margin:.6cqw 0 0}
+.title{font-family:var(--display);font-weight:400;font-size:6.2cqw;margin:4.2cqw 0 0;line-height:1}
+.title em{color:var(--rose)}
+.otorga{font-size:1.5cqw;color:var(--muted);margin:3cqw 0 0;letter-spacing:.1cqw}
+.name{font-family:var(--display);font-style:italic;font-size:5.4cqw;margin:1.4cqw 0 0;padding:0 2cqw .8cqw;border-bottom:1px solid var(--line);min-width:55%;line-height:1.15}
+.txt{font-size:1.6cqw;line-height:1.65;color:var(--ink);margin:2.4cqw auto 0;max-width:86%}
+.foot{margin-top:auto;width:100%;display:flex;justify-content:space-between;align-items:flex-end;font-size:1.25cqw;color:var(--muted)}
+.sig{text-align:center;min-width:30%}
+.sig .s{font-family:var(--display);font-style:italic;font-size:2.8cqw;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:.4cqw;margin-bottom:.6cqw}
+.seal{width:9cqw;height:9cqw;border-radius:50%;background:var(--ink);color:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--display)}
+.seal b{font-weight:400;font-size:3cqw;line-height:1}.seal span{font-family:var(--body);font-size:.75cqw;letter-spacing:.2cqw;text-transform:uppercase;margin-top:.3cqw}
+.note{font-size:.95cqw;color:var(--muted);position:absolute;left:0;right:0;bottom:-2.6cqw}
+.actions{text-align:center;margin:20px 0 0}
+@page{size:A4 landscape;margin:0}
+@media print{
+  body{background:#fff}
+  .panel,.actions{display:none!important}
+  .wrap{display:block!important;padding:0}
+  .cert{width:297mm;height:210mm;max-width:none;aspect-ratio:auto;box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="panel" id="panel">
+  <h1>Tu certificado de asistencia</h1>
+  <p id="intro">Escribe tu nombre y apellidos tal y como quieres que aparezcan en el certificado. Después pulsa «Descargar PDF» y, en la ventana de impresión, elige «Guardar como PDF».</p>
+  <div id="form">
+    <label for="n">Nombre y apellidos</label>
+    <input id="n" autocomplete="name" maxlength="70" placeholder="Por ejemplo: Laura García Martín">
+    <button id="go" type="button">Ver mi certificado</button>
+  </div>
+  <p class="msg" id="msg"></p>
+</div>
+<div class="wrap" id="wrap">
+  <div class="cert">
+    <div class="frame"></div><div class="frame2"></div>
+    <div class="in">
+      <p class="brand">Marta Leiva</p>
+      <p class="kick">Formación para profesionales de la estética</p>
+      <h2 class="title">Certificado de <em>asistencia</em></h2>
+      <p class="otorga">Se otorga a</p>
+      <p class="name" id="cn">&nbsp;</p>
+      <p class="txt">por su asistencia a la formación en directo <strong>Microneedling 360</strong>: técnica y cabezales, principios activos y protocolos de microneedling facial, capilar, acné y manchas, impartida por Zoom los días 20, 21 y 22 de noviembre de 2026, con una duración de 16 horas.</p>
+      <div class="foot">
+        <div class="sig"><div class="s">Marta Leiva Cano</div>Formadora · Microneedling 360</div>
+        <div class="seal"><b>360</b><span>Nov 2026</span></div>
+        <div class="sig"><div class="s" style="font-style:normal;font-family:var(--body);font-size:1.6cqw">22 de noviembre de 2026</div>Fecha de expedición</div>
+      </div>
+      <p class="note">Formación privada. Este certificado acredita la asistencia y no constituye una titulación oficial.</p>
+    </div>
+  </div>
+  <div class="actions"><button id="pdf" type="button">Descargar PDF</button> <button id="edit" type="button" style="background:transparent;color:var(--ink);border:1px solid var(--line)">Cambiar nombre</button></div>
+</div>
+<script>
+(function(){
+  var CODE="M360-NOV26";
+  var q=new URLSearchParams(location.search);
+  var ok=(q.get("c")||"").toUpperCase()===CODE;
+  var $=function(id){return document.getElementById(id)};
+  if(!ok){
+    $("form").style.display="none";
+    $("intro").textContent="Esta página es solo para las alumnas de Microneedling 360. Entra desde el enlace del email que te enviamos al terminar la formación.";
+    return;
+  }
+  var saved="";
+  try{saved=localStorage.getItem("m360_cert_name")||""}catch(e){}
+  if(saved)$("n").value=saved;
+  function show(){
+    var v=$("n").value.replace(/\s+/g," ").trim();
+    if(v.length<5||v.indexOf(" ")<0){$("msg").textContent="Escribe tu nombre y al menos un apellido.";return}
+    $("msg").textContent="";
+    $("cn").textContent=v;
+    try{localStorage.setItem("m360_cert_name",v)}catch(e){}
+    document.title="Certificado Microneedling 360 - "+v;
+    $("panel").style.display="none";$("wrap").style.display="block";window.scrollTo(0,0);
+  }
+  $("go").addEventListener("click",show);
+  $("n").addEventListener("keydown",function(e){if(e.key==="Enter")show()});
+  $("pdf").addEventListener("click",function(){window.print()});
+  $("edit").addEventListener("click",function(){$("wrap").style.display="none";$("panel").style.display="block"});
+})();
+</script>
+</body>
+</html>
